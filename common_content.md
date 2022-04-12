@@ -1,107 +1,107 @@
 **Table of Contents**
 
 - [Python语言特性](#python语言特性)
-  - [1 Python的函数参数传递](#1-python的函数参数传递)
-  - [2 Python中的元类(metaclass)](#2-python中的元类metaclass)
-  - [3 @staticmethod和@classmethod](#3-staticmethod和classmethod)
-  - [4 类变量和实例变量](#4-类变量和实例变量)
-  - [5 Python自省](#5-python自省)
-  - [6 字典推导式](#6-字典推导式)
-  - [7 Python中单下划线和双下划线](#7-python中单下划线和双下划线)
-  - [8 字符串格式化:%和.format](#8-字符串格式化和format)
-  - [9 迭代器和生成器](#9-迭代器和生成器)
-  - [10 `*args` and `**kwargs`](#10-args-and-kwargs)
-  - [11 面向切面编程AOP和装饰器](#11-面向切面编程aop和装饰器)
-  - [12 鸭子类型](#12-鸭子类型)
-  - [13 Python中重载](#13-python中重载)
-  - [14 新式类和旧式类](#14-新式类和旧式类)
-  - [15 `__new__`和`__init__`的区别](#15-__new__和__init__的区别)
-  - [16 单例模式](#16-单例模式)
-    - [1 使用`__new__`方法](#1-使用__new__方法)
-    - [2 共享属性](#2-共享属性)
-    - [3 装饰器版本](#3-装饰器版本)
-    - [4 import方法](#4-import方法)
-  - [17 Python中的作用域](#17-python中的作用域)
-  - [18 GIL线程全局锁](#18-gil线程全局锁)
-  - [19 协程](#19-协程)
-  - [20 闭包](#20-闭包)
-  - [21 lambda函数](#21-lambda函数)
-  - [22 Python函数式编程](#22-python函数式编程)
-  - [23 Python里的拷贝](#23-python里的拷贝)
-  - [24 Python垃圾回收机制](#24-python垃圾回收机制)
-    - [1 引用计数](#1-引用计数)
-    - [2 标记-清除机制](#2-标记-清除机制)
-    - [3 分代技术](#3-分代技术)
-  - [25 Python的List](#25-python的list)
-  - [26 Python的is](#26-python的is)
-  - [27 read,readline和readlines](#27-readreadline和readlines)
-  - [28 Python2和3的区别](#28-python2和3的区别)
-  - [29 super init](#29-super-init)
-  - [30 range and xrange](#30-range-and-xrange)
+  - [Python的函数参数传递](#python的函数参数传递)
+  - [Python中的元类(metaclass)](#python中的元类metaclass)
+  - [@staticmethod和@classmethod](#staticmethod和classmethod)
+  - [类变量和实例变量](#类变量和实例变量)
+  - [Python自省](#python自省)
+  - [字典推导式](#字典推导式)
+  - [Python中单下划线和双下划线](#python中单下划线和双下划线)
+  - [字符串格式化:%和.format](#字符串格式化和format)
+  - [迭代器和生成器](#迭代器和生成器)
+  - [`*args` and `**kwargs`](#args-and-kwargs)
+  - [面向切面编程AOP和装饰器](#面向切面编程aop和装饰器)
+  - [鸭子类型](#鸭子类型)
+  - [Python中重载](#python中重载)
+  - [新式类和旧式类](#新式类和旧式类)
+  - [`__new__`和`__init__`的区别](#__new__和__init__的区别)
+  - [单例模式](#单例模式)
+    - [使用`__new__`方法](#使用__new__方法)
+    - [共享属性](#共享属性)
+    - [装饰器版本](#装饰器版本)
+    - [import方法](#import方法)
+  - [Python中的作用域](#python中的作用域)
+  - [GIL线程全局锁](#gil线程全局锁)
+  - [协程](#协程)
+  - [闭包](#闭包)
+  - [lambda函数](#lambda函数)
+  - [Python函数式编程](#python函数式编程)
+  - [浅拷贝与深拷贝](#浅拷贝与深拷贝)
+  - [Python垃圾回收机制](#python垃圾回收机制)
+    - [引用计数](#引用计数)
+    - [标记-清除机制](#标记-清除机制)
+    - [分代技术](#分代技术)
+  - [List的实现](#list的实现)
+  - [Python的is](#python的is)
+  - [read,readline和readlines](#readreadline和readlines)
+  - [Python2和3的区别](#python2和3的区别)
+  - [super init](#super-init)
+  - [range and xrange](#range-and-xrange)
 - [操作系统](#操作系统)
-  - [1 select,poll和epoll](#1-selectpoll和epoll)
-  - [2 调度算法](#2-调度算法)
-  - [3 死锁](#3-死锁)
-  - [4 程序编译与链接](#4-程序编译与链接)
-    - [1 预处理](#1-预处理)
-    - [2 编译](#2-编译)
-    - [3 汇编](#3-汇编)
-    - [4 链接](#4-链接)
-  - [5 静态链接和动态链接](#5-静态链接和动态链接)
-  - [6 虚拟内存技术](#6-虚拟内存技术)
-  - [7 分页和分段](#7-分页和分段)
+  - [select,poll和epoll](#selectpoll和epoll)
+  - [调度算法](#调度算法)
+  - [死锁](#死锁)
+  - [程序编译与链接](#程序编译与链接)
+    - [预处理](#预处理)
+    - [编译](#编译)
+    - [汇编](#汇编)
+    - [链接](#链接)
+  - [静态链接和动态链接](#静态链接和动态链接)
+  - [虚拟内存技术](#虚拟内存技术)
+  - [分页和分段](#分页和分段)
     - [分页与分段的主要区别](#分页与分段的主要区别)
-  - [8 页面置换算法](#8-页面置换算法)
-  - [9 边沿触发和水平触发](#9-边沿触发和水平触发)
+  - [页面置换算法](#页面置换算法)
+  - [边沿触发和水平触发](#边沿触发和水平触发)
 - [数据库](#数据库)
-  - [1 事务](#1-事务)
-  - [2 数据库索引](#2-数据库索引)
-  - [3 Redis原理](#3-redis原理)
+  - [事务](#事务)
+  - [数据库索引](#数据库索引)
+  - [Redis原理](#redis原理)
     - [Redis是什么？](#redis是什么)
     - [Redis数据库](#redis数据库)
     - [Redis缺点](#redis缺点)
-  - [4 乐观锁和悲观锁](#4-乐观锁和悲观锁)
-  - [5 MVCC](#5-mvcc)
+  - [乐观锁和悲观锁](#乐观锁和悲观锁)
+  - [MVCC](#mvcc)
     - [MySQL的innodb引擎是如何实现MVCC的](#mysql的innodb引擎是如何实现mvcc的)
-  - [6 MyISAM和InnoDB](#6-myisam和innodb)
+  - [MyISAM和InnoDB](#myisam和innodb)
 - [网络](#网络)
-  - [1 三次握手](#1-三次握手)
-  - [2 四次挥手](#2-四次挥手)
-  - [3 ARP协议](#3-arp协议)
-  - [4 urllib和urllib2的区别](#4-urllib和urllib2的区别)
-  - [5 Post和Get](#5-post和get)
-  - [6 Cookie和Session](#6-cookie和session)
-  - [7 apache和nginx的区别](#7-apache和nginx的区别)
-  - [8 网站用户密码保存](#8-网站用户密码保存)
-  - [9 HTTP和HTTPS](#9-http和https)
-  - [10 XSRF和XSS](#10-xsrf和xss)
-  - [11 幂等 Idempotence](#11-幂等-idempotence)
-  - [12 RESTful架构(SOAP,RPC)](#12-restful架构soaprpc)
-  - [13 SOAP](#13-soap)
-  - [14 RPC](#14-rpc)
-  - [15 CGI和WSGI](#15-cgi和wsgi)
-  - [16 中间人攻击](#16-中间人攻击)
-  - [17 c10k问题](#17-c10k问题)
-  - [18 socket](#18-socket)
-  - [19 浏览器缓存](#19-浏览器缓存)
-  - [20 HTTP1.0和HTTP1.1](#20-http10和http11)
-  - [21 Ajax](#21-ajax)
+  - [三次握手](#三次握手)
+  - [四次挥手](#四次挥手)
+  - [ARP协议](#arp协议)
+  - [urllib和urllib2的区别](#urllib和urllib2的区别)
+  - [Post和Get](#post和get)
+  - [Cookie和Session](#cookie和session)
+  - [apache和nginx的区别](#apache和nginx的区别)
+  - [网站用户密码保存](#网站用户密码保存)
+  - [HTTP和HTTPS](#http和https)
+  - [XSRF和XSS](#xsrf和xss)
+  - [幂等 Idempotence](#幂等-idempotence)
+  - [RESTful架构(SOAP,RPC)](#restful架构soaprpc)
+  - [SOAP](#soap)
+  - [RPC](#rpc)
+  - [CGI和WSGI](#cgi和wsgi)
+  - [中间人攻击](#中间人攻击)
+  - [c10k问题](#c10k问题)
+  - [socket](#socket)
+  - [浏览器缓存](#浏览器缓存)
+  - [HTTP1.0和HTTP1.1](#http10和http11)
+  - [Ajax](#ajax)
 - [Linux](#linux)
   - [Unix进程间通信方式(IPC)](#unix进程间通信方式ipc)
   - [Linux 常用命令](#linux-常用命令)
 
 # Python语言特性
 
-## 1 Python的函数参数传递
+## Python的函数参数传递
 
 看两个例子:
 
 ```python
 a = 1
 def fun(a):
-    a = 2
+  a = 2
 fun(a)
-print a  # 1
+print(a)  # 1
 ```
 
 ```python
@@ -109,7 +109,7 @@ a = []
 def fun(a):
     a.append(1)
 fun(a)
-print a  # [1]
+print(a)  # [1]
 ```
 
 所有的变量都可以理解是内存中一个对象的“引用”，或者，也可以看似c中void*的感觉。
@@ -119,12 +119,12 @@ print a  # [1]
 ```python
 a = 1
 def fun(a):
-    print "func_in",id(a)   # func_in 41322472
+    print(f'func_in {id(a)}')  # func_in 41322472
     a = 2
-    print "re-point",id(a), id(2)   # re-point 41322448 41322448
-print "func_out",id(a), id(1)  # func_out 41322472 41322472
+    print(f're-point {id(a)} {id(2)}')  # re-point 41322448 41322448
+print(f'{id(a)} {id(1)}')  # func_out 41322472 41322472
 fun(a)
-print a  # 1
+print(a)  # 1
 ```
 
 注：具体的值在不同电脑上运行时可能不同。
@@ -136,11 +136,11 @@ print a  # 1
 ```python
 a = []
 def fun(a):
-    print "func_in",id(a)  # func_in 53629256
+    print(f'func_in {id(a)}')  # func_in 53629256
     a.append(1)
-print "func_out",id(a)     # func_out 53629256
+print(f'func_out {id(a)}')  # func_out 53629256
 fun(a)
-print a  # [1]
+print(a)  # [1]
 ```
 
 这里记住的是类型是属于对象的，而不是变量。而对象有两种,“可更改”（mutable）与“不可更改”（immutable）对象。在python中，strings, tuples, 和numbers是不可更改的对象，而 list, dict, set 等则是可以修改的对象。(这就是这个问题的重点)
@@ -149,31 +149,31 @@ print a  # [1]
 
 如果还不明白的话,这里有更好的解释: <http://stackoverflow.com/questions/986006/how-do-i-pass-a-variable-by-reference>
 
-## 2 Python中的元类(metaclass)
+## Python中的元类(metaclass)
 
 这个非常的不常用,但是像ORM这种复杂的结构还是会需要的,详情请看:<http://stackoverflow.com/questions/100003/what-is-a-metaclass-in-python>
 
-## 3 @staticmethod和@classmethod
+## @staticmethod和@classmethod
 
 Python其实有3个方法,即静态方法(staticmethod),类方法(classmethod)和实例方法,如下:
 
 ```python
 def foo(x):
-    print "executing foo(%s)"%(x)
+    print("executing foo(%s)" % (x))
 
 class A(object):
-    def foo(self,x):
-        print "executing foo(%s,%s)"%(self,x)
+    def foo(self, x):
+        print("executing foo(%s,%s)" % (self, x))
 
     @classmethod
-    def class_foo(cls,x):
-        print "executing class_foo(%s,%s)"%(cls,x)
+    def class_foo(cls, x):
+        print("executing class_foo(%s,%s)" % (cls, x))
 
     @staticmethod
     def static_foo(x):
-        print "executing static_foo(%s)"%x
+        print("executing static_foo(%s)" % x)
 
-a=A()
+a = A()
 
 ```
 
@@ -191,7 +191,7 @@ a=A()
 1. <http://stackoverflow.com/questions/136097/what-is-the-difference-between-staticmethod-and-classmethod-in-python>
 2. <https://realpython.com/blog/python/instance-class-and-static-methods-demystified/>
 
-## 4 类变量和实例变量
+## 类变量和实例变量
 
 **类变量：**
 
@@ -202,33 +202,34 @@ a=A()
 > 实例化之后，每个实例单独拥有的变量。
 
 ```python
-class Test(object):  
-    num_of_instance = 0  
-    def __init__(self, name):  
-        self.name = name  
-        Test.num_of_instance += 1  
-  
-if __name__ == '__main__':  
-    print Test.num_of_instance   # 0
-    t1 = Test('jack')  
-    print Test.num_of_instance   # 1
-    t2 = Test('lucy')  
-    print t1.name , t1.num_of_instance  # jack 2
-    print t2.name , t2.num_of_instance  # lucy 2
+class Test(object):
+    num_of_instance = 0
+    def __init__(self, name):
+        self.name = name
+        Test.num_of_instance += 1
+
+
+if __name__ == '__main__':
+    print(Test.num_of_instance)  # 0
+    t1 = Test('jack')
+    print(Test.num_of_instance)  # 1
+    t2 = Test('lucy')
+    print(f'{t1.name} {t1.num_of_instance}')  # jack 2
+    print(f'{t2.name} {t2.num_of_instance}')  # lucy 2
 ```
 
 > 补充的例子
 
 ```python
 class Person:
-    name="aaa"
+    name = "aaa"
 
-p1=Person()
-p2=Person()
-p1.name="bbb"
-print p1.name  # bbb
-print p2.name  # aaa
-print Person.name  # aaa
+p1 = Person()
+p2 = Person()
+p1.name = "bbb"
+print(p1.name)  # bbb
+print(p2.name)  # aaa
+print(Person.name)  # aaa
 ```
 
 这里`p1.name="bbb"`是实例调用了类变量,这其实和上面第一个问题一样,就是函数传参的问题,`p1.name`一开始是指向的类变量`name="aaa"`,但是在实例的作用域里把类变量的引用改变了,就变成了一个实例变量,self.name不再引用Person的类变量name了.
@@ -237,33 +238,33 @@ print Person.name  # aaa
 
 ```python
 class Person:
-    name=[]
+    name = []
 
-p1=Person()
-p2=Person()
+p1 = Person()
+p2 = Person()
 p1.name.append(1)
-print p1.name  # [1]
-print p2.name  # [1]
-print Person.name  # [1]
+print(p1.name)  # [1]
+print(p2.name)  # [1]
+print(Person.name)  # [1]
 ```
 
 参考:<http://stackoverflow.com/questions/6470428/catch-multiple-exceptions-in-one-line-except-block>
 
-## 5 Python自省
+## Python自省
 
 这个也是python彪悍的特性.
 
 自省就是面向对象的语言所写的程序在运行时,所能知道对象的类型.简单一句就是运行时能够获得对象的类型.比如type(),dir(),getattr(),hasattr(),isinstance().
 
 ```python
-a = [1,2,3]
-b = {'a':1,'b':2,'c':3}
+a = [1, 2, 3]
+b = {'a': 1, 'b': 2, 'c': 3}
 c = True
-print type(a),type(b),type(c) # <type 'list'> <type 'dict'> <type 'bool'>
-print isinstance(a,list)  # True
+print(f'{type(a)} {type(b)} {type(c)}')  # <type 'list'> <type 'dict'> <type 'bool'>
+print(isinstance(a, list))  # True
 ```
 
-## 6 字典推导式
+## 字典推导式
 
 可能你见过列表推导时,却没有见过字典推导式,在2.7中才加入的:
 
@@ -271,7 +272,7 @@ print isinstance(a,list)  # True
 d = {key: value for (key, value) in iterable}
 ```
 
-## 7 Python中单下划线和双下划线
+## Python中单下划线和双下划线
 
 ```python
 >>> class MyClass():
@@ -300,7 +301,7 @@ AttributeError: myClass instance has no attribute '__superprivate'
 
 或者: <http://www.zhihu.com/question/19754941>
 
-## 8 字符串格式化:%和.format
+## 字符串格式化:%和.format
 
 .format在许多方面看起来更便利.对于`%`最烦人的是它无法同时传递一个变量和元组.你可能会想下面的代码不会有什么问题:
 
@@ -323,7 +324,7 @@ AttributeError: myClass instance has no attribute '__superprivate'
 
 <http://stackoverflow.com/questions/5082452/python-string-formatting-vs-format>
 
-## 9 迭代器和生成器
+## 迭代器和生成器
 
 这个是stackoverflow里python排名第一的问题,值得一看: <http://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do-in-python>
 
@@ -344,7 +345,7 @@ AttributeError: myClass instance has no attribute '__superprivate'
 
 通过列表生成式，可以直接创建一个列表。但是，受到内存限制，列表容量肯定是有限的。而且，创建一个包含百万元素的列表，不仅是占用很大的内存空间，如：我们只需要访问前面的几个元素，后面大部分元素所占的空间都是浪费的。因此，没有必要创建完整的列表（节省大量内存空间）。在Python中，我们可以采用生成器：边循环，边计算的机制—>generator
 
-## 10 `*args` and `**kwargs`
+## `*args` and `**kwargs`
 
 用`*args`和`**kwargs`只是为了方便并没有强制使用它们.
 
@@ -384,20 +385,18 @@ def table_things(titlestring, **kwargs)
 当调用函数时你也可以用`*`和`**`语法.例如:
 
 ```python
->>> def print_three_things(a, b, c):
-...     print 'a = {0}, b = {1}, c = {2}'.format(a,b,c)
-...
->>> mylist = ['aardvark', 'baboon', 'cat']
->>> print_three_things(*mylist)
+def print_three_things(a, b, c):
+    print('a = {0}, b = {1}, c = {2}'.format(a, b, c))
 
-a = aardvark, b = baboon, c = cat
+mylist = ['aardvark', 'baboon', 'cat']
+print_three_things(*mylist) # a = aardvark, b = baboon, c = cat
 ```
 
 就像你看到的一样,它可以传递列表(或者元组)的每一项并把它们解包.注意必须与它们在函数里的参数相吻合.当然,你也可以在函数定义或者函数调用时用*.
 
 <http://stackoverflow.com/questions/3394835/args-and-kwargs>
 
-## 11 面向切面编程AOP和装饰器
+## 面向切面编程AOP和装饰器
 
 这个AOP一听起来有点懵,同学面阿里的时候就被问懵了...
 
@@ -407,7 +406,7 @@ a = aardvark, b = baboon, c = cat
 
 中文: <http://taizilongxu.gitbooks.io/stackoverflow-about-python/content/3/README.html>
 
-## 12 鸭子类型
+## 鸭子类型
 
 “当看到一只鸟走起来像鸭子、游泳起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子。”
 
@@ -419,7 +418,7 @@ a = aardvark, b = baboon, c = cat
 
 鸭子类型在动态语言中经常使用，非常灵活，使得python不像java那样专门去弄一大堆的设计模式。
 
-## 13 Python中重载
+## Python中重载
 
 引自知乎:<http://www.zhihu.com/question/20053359>
 
@@ -436,7 +435,7 @@ a = aardvark, b = baboon, c = cat
 
 好了，鉴于情况 1 跟 情况 2 都有了解决方案，python 自然就不需要函数重载了。
 
-## 14 新式类和旧式类
+## 新式类和旧式类
 
 这个面试官问了,我说了老半天,不知道他问的真正意图是什么.
 
@@ -451,25 +450,23 @@ a = aardvark, b = baboon, c = cat
 ```python
 class A():
     def foo1(self):
-        print "A"
+        print('A')
 class B(A):
     def foo2(self):
         pass
 class C(A):
     def foo1(self):
-        print "C"
+        print('C')
 class D(B, C):
     pass
 
 d = D()
-d.foo1()
-
-# A
+d.foo1()  # A
 ```
 
 **按照经典类的查找顺序`从左到右深度优先`的规则，在访问`d.foo1()`的时候,D这个类是没有的..那么往上查找,先找到B,里面没有,深度优先,访问A,找到了foo1(),所以这时候调用的是A的foo1()，从而导致C重写的foo1()被绕过**
 
-## 15 `__new__`和`__init__`的区别
+## `__new__`和`__init__`的区别
 
 这个`__new__`确实很少见到,先做了解吧.
 
@@ -482,14 +479,14 @@ d.foo1()
 
 ps: `__metaclass__`是创建类时起作用.所以我们可以分别使用`__metaclass__`,`__new__`和`__init__`来分别在类创建,实例创建和实例初始化的时候做一些小手脚.
 
-## 16 单例模式
+## 单例模式
 
 > ​ 单例模式是一种常用的软件设计模式。在它的核心结构中只包含一个被称为单例类的特殊类。通过单例模式可以保证系统中一个类只有一个实例而且该实例易于外界访问，从而方便对实例个数的控制并节约系统资源。如果希望在系统中某个类的对象只能存在一个，单例模式是最好的解决方案。
 >
 > `__new__()`在`__init__()`之前被调用，用于生成实例对象。利用这个方法和类的属性的特点可以实现设计模式的单例模式。单例模式是指创建唯一对象，单例模式设计的类只能实例
 **这个绝对常考啊.绝对要记住1~2个方法,当时面试官是让手写的.**
 
-### 1 使用`__new__`方法
+### 使用`__new__`方法
 
 ```python
 class Singleton(object):
@@ -503,24 +500,25 @@ class MyClass(Singleton):
     a = 1
 ```
 
-### 2 共享属性
+### 共享属性
 
 创建实例时把所有实例的`__dict__`指向同一个字典,这样它们具有相同的属性和方法.
 
 ```python
-
 class Borg(object):
     _state = {}
+
     def __new__(cls, *args, **kw):
         ob = super(Borg, cls).__new__(cls, *args, **kw)
         ob.__dict__ = cls._state
         return ob
 
+
 class MyClass2(Borg):
     a = 1
 ```
 
-### 3 装饰器版本
+### 装饰器版本
 
 ```python
 def singleton(cls):
@@ -536,7 +534,7 @@ class MyClass:
   ...
 ```
 
-### 4 import方法
+### import方法
 
 作为python的模块是天然的单例模式
 
@@ -552,12 +550,11 @@ my_singleton = My_Singleton()
 from mysingleton import my_singleton
 
 my_singleton.foo()
-
 ```
 
 **[单例模式伯乐在线详细解释](http://python.jobbole.com/87294/)**
 
-## 17 Python中的作用域
+## Python中的作用域
 
 Python 中，一个变量的作用域总是由在代码中被赋值的地方所决定的。
 
@@ -565,7 +562,7 @@ Python 中，一个变量的作用域总是由在代码中被赋值的地方所�
 
 本地作用域（Local）→当前作用域被嵌入的本地作用域（Enclosing locals）→全局/模块作用域（Global）→内置作用域（Built-in）
 
-## 18 GIL线程全局锁
+## GIL线程全局锁
 
 线程全局锁(Global Interpreter Lock),即Python为了保证线程安全而采取的独立线程运行的限制,说白了就是一个核只能在同一时间运行一个线程.**对于io密集型任务，python的多线程起到作用，但对于cpu密集型任务，python的多线程几乎占不到任何优势，还有可能因为争夺资源而变慢。**
 
@@ -573,15 +570,13 @@ Python 中，一个变量的作用域总是由在代码中被赋值的地方所�
 
 解决办法就是多进程和下面的协程(协程也只是单CPU,但是能减小切换代价提升性能).
 
-## 19 协程
-
-知乎被问到了,呵呵哒,跪了
+## 协程
 
 简单点说协程是进程和线程的升级版,进程和线程都面临着内核态和用户态的切换问题而耗费许多切换时间,而协程就是用户自己控制切换的时机,不再需要陷入系统的内核态.
 
 Python里最常见的yield就是协程的思想!可以查看第九个问题.
 
-## 20 闭包
+## 闭包
 
 闭包(closure)是函数式编程的重要的语法结构。闭包也是一种组织代码的结构，它同样提高了代码的可重复使用性。
 
@@ -597,13 +592,13 @@ Python里最常见的yield就是协程的思想!可以查看第九个问题.
 
 闭包就像个空心球一样,你知道外面和里面,但你不知道中间是什么样.
 
-## 21 lambda函数
+## lambda函数
 
 其实就是一个匿名函数,为什么叫lambda?因为和后面的函数式编程有关.
 
 推荐: [知乎](http://www.zhihu.com/question/20125256)
 
-## 22 Python函数式编程
+## Python函数式编程
 
 这个需要适当的了解一下吧,毕竟函数式编程在Python中也做了引用.
 
@@ -635,9 +630,13 @@ reduce函数是对一个序列的每个项迭代调用函数，下面是求3的�
 6
 ```
 
-## 23 Python里的拷贝
+## 浅拷贝与深拷贝
 
-引用和copy(),deepcopy()的区别
+浅层复制 构造一个新的复合对象，然后（在尽可能的范围内）将原始对象中找到的对象的 引用 插入其中。
+深层复制 构造一个新的复合对象，然后，递归地将在原始对象里找到的对象的 副本 插入其中。
+
+对于简单的object，例如不可变对象（数值，字符串，元组），shallow copy和deep copy没区别。
+对于复杂的object，如list中套着list的情况，如果改变原object的子list中的一个元素，新的copy对象就会跟着一起变。
 
 ```python
 import copy
@@ -662,11 +661,11 @@ c =  [1, 2, 3, 4, ['a', 'b', 'c']]
 d =  [1, 2, 3, 4, ['a', 'b']]
 ```
 
-## 24 Python垃圾回收机制
+## Python垃圾回收机制
 
 Python GC主要使用引用计数（reference counting）来跟踪和回收垃圾。在引用计数的基础上，通过“标记-清除”（mark and sweep）解决容器对象可能产生的循环引用问题，通过“分代回收”（generation collection）以空间换时间的方法提高垃圾回收效率。
 
-### 1 引用计数
+### 引用计数
 
 PyObject是每个对象必有的内容，其中`ob_refcnt`就是做为引用计数。当一个对象有新的引用时，它的`ob_refcnt`就会增加，当引用它的对象被删除，它的`ob_refcnt`就会减少.引用计数为0时，该对象生命就结束了。
 
@@ -680,11 +679,11 @@ PyObject是每个对象必有的内容，其中`ob_refcnt`就是做为引用计�
 1. 维护引用计数消耗资源
 2. 循环引用
 
-### 2 标记-清除机制
+### 标记-清除机制
 
 基本思路是先按需分配，等到没有空闲内存的时候从寄存器和程序栈上的引用出发，遍历以对象为节点、以引用为边构成的图，把所有可以访问到的对象打上标记，然后清扫一遍内存空间，把所有没标记的对象释放。
 
-### 3 分代技术
+### 分代技术
 
 分代回收的整体思想是：将系统中的所有内存块根据其存活时间划分为不同的集合，每个集合就成为一个“代”，垃圾收集频率随着“代”的存活时间的增大而减小，存活时间通常利用经过几次垃圾回收来度量。
 
@@ -693,25 +692,25 @@ Python默认定义了三代对象集合，索引数越大，对象存活时间�
 举例：
 当某些内存块M经过了3次垃圾收集的清洗之后还存活时，我们就将内存块M划到一个集合A中去，而新分配的内存都划分到集合B中去。当垃圾收集开始工作时，大多数情况都只对集合B进行垃圾回收，而对集合A进行垃圾回收要隔相当长一段时间后才进行，这就使得垃圾收集机制需要处理的内存少了，效率自然就提高了。在这个过程中，集合B中的某些内存块由于存活时间长而会被转移到集合A中，当然，集合A中实际上也存在一些垃圾，这些垃圾的回收会因为这种分代的机制而被延迟。
 
-## 25 Python的List
+## List的实现
 
 推荐: <http://www.jianshu.com/p/J4U6rR>
 
-## 26 Python的is
+## Python的is
 
 is是对比地址,==是对比值
 
-## 27 read,readline和readlines
+## read,readline和readlines
 
 * read        读取整个文件
 * readline    读取下一行,使用生成器方法
 * readlines   读取整个文件到一个迭代器以供我们遍历
 
-## 28 Python2和3的区别
+## Python2和3的区别
 
 推荐：[Python 2.7.x 与 Python 3.x 的主要差异](http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/)
 
-## 29 super init
+## super init
 
 super() lets you avoid referring to the base class explicitly, which can be nice. But the main advantage comes with multiple inheritance, where all sorts of fun stuff can happen. See the standard docs on super if you haven't already.
 
@@ -721,7 +720,7 @@ Note that the syntax changed in Python 3.0: you can just say super().`__init__`(
 
 [Python2.7中的super方法浅见](http://blog.csdn.net/mrlevo520/article/details/51712440)
 
-## 30 range and xrange
+## range and xrange
 
 都在循环时使用，xrange内存性能更好。
 for i in range(0, 20):
@@ -734,7 +733,7 @@ What is the difference between range and xrange functions in Python 2.X?
 
 # 操作系统
 
-## 1 select,poll和epoll
+## select,poll和epoll
 
 其实所有的I/O都是轮询的方法,只不过实现的层面不同罢了.
 
@@ -754,7 +753,7 @@ epoll改了三个缺点.
 
 关于epoll的: <http://www.cnblogs.com/my_life/articles/3968782.html>
 
-## 2 调度算法
+## 调度算法
 
 1. 先来先服务(FCFS, First Come First Serve)
 2. 短作业优先(SJF, Shortest Job First)
@@ -769,7 +768,7 @@ epoll改了三个缺点.
 1. 最早截至时间优先 EDF
 2. 最低松弛度优先 LLF
 
-## 3 死锁
+## 死锁
 
 原因:
 
@@ -794,7 +793,7 @@ epoll改了三个缺点.
 
 死锁概念处理策略详细介绍:<https://wizardforcel.gitbooks.io/wangdaokaoyan-os/content/10.html>
 
-## 4 程序编译与链接
+## 程序编译与链接
 
 推荐: <http://www.ruanyifeng.com/blog/2014/11/compiler.html>
 
@@ -802,7 +801,7 @@ Bulid过程可以分解为4个步骤:预处理(Prepressing), 编译(Compilation)
 
 以c语言为例:
 
-### 1 预处理
+### 预处理
 
 预编译过程主要处理那些源文件中的以“#”开始的预编译指令，主要处理规则有：
 
@@ -813,31 +812,31 @@ Bulid过程可以分解为4个步骤:预处理(Prepressing), 编译(Compilation)
 5. 添加行号和文件名标识，以便于编译时编译器产生调试用的行号信息以及用于编译时产生编译错误或警告时可显示行号
 6. 保留所有的#pragma编译器指令。
 
-### 2 编译
+### 编译
 
 编译过程就是把预处理完的文件进行一系列的词法分析、语法分析、语义分析及优化后生成相应的汇编代码文件。这个过程是整个程序构建的核心部分。
 
-### 3 汇编
+### 汇编
 
 汇编器是将汇编代码转化成机器可以执行的指令，每一条汇编语句几乎都是一条机器指令。经过编译、链接、汇编输出的文件成为目标文件(Object File)
 
-### 4 链接
+### 链接
 
 链接的主要内容就是把各个模块之间相互引用的部分处理好，使各个模块可以正确的拼接。
 链接的主要过程包块 地址和空间的分配（Address and Storage Allocation）、符号决议(Symbol Resolution)和重定位(Relocation)等步骤。
 
-## 5 静态链接和动态链接
+## 静态链接和动态链接
 
 静态链接方法：静态链接的时候，载入代码就会把程序会用到的动态代码或动态代码的地址确定下来
 静态库的链接可以使用静态链接，动态链接库也可以使用这种方法链接导入库
 
 动态链接方法：使用这种方式的程序并不在一开始就完成动态链接，而是直到真正调用动态库代码时，载入程序才计算(被调用的那部分)动态代码的逻辑地址，然后等到某个时候，程序又需要调用另外某块动态代码时，载入程序又去计算这部分代码的逻辑地址，所以，这种方式使程序初始化时间较短，但运行期间的性能比不上静态链接的程序
 
-## 6 虚拟内存技术
+## 虚拟内存技术
 
 虚拟存储器是指具有请求调入功能和置换功能,能从逻辑上对内存容量加以扩充的一种存储系统.
 
-## 7 分页和分段
+## 分页和分段
 
 分页: 用户程序的地址空间被划分成若干固定大小的区域，称为“页”，相应地，内存空间分成若干个物理块，页和块的大小相等。可将用户程序的任一页放在内存的任一块中，实现了离散分配。
 
@@ -849,25 +848,25 @@ Bulid过程可以分解为4个步骤:预处理(Prepressing), 编译(Compilation)
 2. 页的大小固定,由系统确定,将逻辑地址划分为页号和页内地址是由机器硬件实现的.而段的长度却不固定,决定于用户所编写的程序,通常由编译程序在对源程序进行编译时根据信息的性质来划分.
 3. 分页的作业地址空间是一维的.分段的地址空间是二维的.
 
-## 8 页面置换算法
+## 页面置换算法
 
 1. 最佳置换算法OPT:不可能实现
 2. 先进先出FIFO
 3. 最近最久未使用算法LRU:最近一段时间里最久没有使用过的页面予以置换.
 4. clock算法
 
-## 9 边沿触发和水平触发
+## 边沿触发和水平触发
 
 边缘触发是指每当状态变化时发生一个 io 事件，条件触发是只要满足条件就发生一个 io 事件
 
 # 数据库
 
-## 1 事务
+## 事务
 
 数据库事务(Database Transaction) ，是指作为单个逻辑工作单元执行的一系列操作，要么完全地执行，要么完全地不执行。
 彻底理解数据库事务: <http://www.hollischuang.com/archives/898>
 
-## 2 数据库索引
+## 数据库索引
 
 推荐: <http://tech.meituan.com/mysql-index.html>
 
@@ -875,7 +874,7 @@ Bulid过程可以分解为4个步骤:预处理(Prepressing), 编译(Compilation)
 
 聚集索引,非聚集索引,B-Tree,B+Tree,最左前缀原理
 
-## 3 Redis原理
+## Redis原理
 
 ### Redis是什么？
 
@@ -897,7 +896,7 @@ Bulid过程可以分解为4个步骤:预处理(Prepressing), 编译(Compilation)
 * 是数据库容量受到物理内存的限制,不能用作海量数据的高性能读写,因此Redis适合的场景主要局限在较小数据量的高性能操作和运算上。
 * Redis较难支持在线扩容，在集群容量达到上限时在线扩容会变得很复杂。为避免这一问题，运维人员在系统上线时必须确保有足够的空间，这对资源造成了很大的浪费。
 
-## 4 乐观锁和悲观锁
+## 乐观锁和悲观锁
 
 悲观锁：假定会发生并发冲突，屏蔽一切可能违反数据完整性的操作
 
@@ -905,7 +904,7 @@ Bulid过程可以分解为4个步骤:预处理(Prepressing), 编译(Compilation)
 
 乐观锁与悲观锁的具体区别: <http://www.cnblogs.com/Bob-FD/p/3352216.html>
 
-## 5 MVCC
+## MVCC
 
 > ​ 全称是Multi-Version Concurrent Control，即多版本并发控制，在MVCC协议下，每个读操作会看到一个一致性的snapshot，并且可以实现非阻塞的读。MVCC允许数据具有多个版本，这个版本可以是时间戳或者是全局递增的事务ID，在同一个时间点，不同的事务看到的数据是不同的。
 
@@ -928,7 +927,7 @@ innodb会为每一行添加两个字段，分别表示该行**创建的版本**�
 
 > 参考：[MVCC浅析](http://blog.csdn.net/chosen0ne/article/details/18093187)
 
-## 6 MyISAM和InnoDB
+## MyISAM和InnoDB
 
 MyISAM 适合于一些需要大量查询的应用，但其对于有大量写操作并不是很好。甚至你只是需要update一个字段，整个表都会被锁起来，而别的进程，就算是读进程都无法操作直到读操作完成。另外，MyISAM 对于 SELECT COUNT(*) 这类的计算是超快无比的。
 
@@ -939,13 +938,13 @@ MySQL存储引擎－－MyISAM与InnoDB区别: <https://segmentfault.com/a/119000
 
 # 网络
 
-## 1 三次握手
+## 三次握手
 
 1. 客户端通过向服务器端发送一个SYN来创建一个主动打开，作为三次握手的一部分。客户端把这段连接的序号设定为随机数 A。
 2. 服务器端应当为一个合法的SYN回送一个SYN/ACK。ACK 的确认码应为 A+1，SYN/ACK 包本身又有一个随机序号 B。
 3. 最后，客户端再发送一个ACK。当服务端受到这个ACK的时候，就完成了三路握手，并进入了连接创建状态。此时包序号被设定为收到的确认号 A+1，而响应则为 B+1。
 
-## 2 四次挥手
+## 四次挥手
 
 _注意: 中断连接端可以是客户端，也可以是服务器端. 下面仅以客户端断开连接举例, 反之亦然._
 
@@ -956,18 +955,18 @@ _注意: 中断连接端可以是客户端，也可以是服务器端. 下面仅
 
 图解: <http://blog.csdn.net/whuslei/article/details/6667471>
 
-## 3 ARP协议
+## ARP协议
 
 地址解析协议(Address Resolution Protocol)，其基本功能为透过目标设备的IP地址，查询目标的MAC地址，以保证通信的顺利进行。它是IPv4网络层必不可少的协议，不过在IPv6中已不再适用，并被邻居发现协议（NDP）所替代。
 
-## 4 urllib和urllib2的区别
+## urllib和urllib2的区别
 
 这个面试官确实问过,当时答的urllib2可以Post而urllib不可以.
 
 1. urllib提供urlencode方法用来GET查询字符串的产生，而urllib2没有。这是为何urllib常和urllib2一起使用的原因。
 2. urllib2可以接受一个Request类的实例来设置URL请求的headers，urllib仅可以接受URL。这意味着，你不可以伪装你的User Agent字符串等。
 
-## 5 Post和Get
+## Post和Get
 
 [GET和POST有什么区别？及为什么网上的多数答案都是错的](http://www.cnblogs.com/nankezhishi/archive/2012/06/09/getandpost.html)
 [知乎回答](https://www.zhihu.com/question/31640769?rf=37401322)
@@ -975,7 +974,7 @@ _注意: 中断连接端可以是客户端，也可以是服务器端. 下面仅
 get: [RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1](http://tools.ietf.org/html/rfc2616#section-9.3)
 post: [RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1](http://tools.ietf.org/html/rfc2616#section-9.5)
 
-## 6 Cookie和Session
+## Cookie和Session
 
 |          | Cookie                                               | Session  |
 | :------- | :--------------------------------------------------- | :------- |
@@ -985,7 +984,7 @@ post: [RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1](http://tools.ietf.org
 
 session技术是要使用到cookie的，之所以出现session技术，主要是为了安全。
 
-## 7 apache和nginx的区别
+## apache和nginx的区别
 
 nginx 相对 apache 的优点：
 
@@ -1002,14 +1001,14 @@ apache 相对nginx 的优点：
 * 少bug ，nginx 的bug 相对较多
 * 超稳定
 
-## 8 网站用户密码保存
+## 网站用户密码保存
 
 1. 明文保存
 2. 明文hash后保存,如md5
 3. MD5+Salt方式,这个salt可以随机
 4. 知乎使用了Bcrypy(好像)加密
 
-## 9 HTTP和HTTPS
+## HTTP和HTTPS
 
 | 状态码         | 定义                            |
 | :------------- | :------------------------------ |
@@ -1024,14 +1023,14 @@ apache 相对nginx 的优点：
 
 HTTPS握手,对称加密,非对称加密,TLS/SSL,RSA
 
-## 10 XSRF和XSS
+## XSRF和XSS
 
 * CSRF(Cross-site request forgery)跨站请求伪造
 * XSS(Cross Site Scripting)跨站脚本攻击
 
 CSRF重点在请求,XSS重点在脚本
 
-## 11 幂等 Idempotence
+## 幂等 Idempotence
 
 HTTP方法的幂等性是指一次和多次请求某一个资源应该具有同样的**副作用**。(注意是副作用)
 
@@ -1043,15 +1042,15 @@ POST所对应的URI并非创建的资源本身，而是资源的接收者。比�
 
 PUT所对应的URI是要创建或更新的资源本身。比如：`PUT http://www.forum/articles/4231`的语义是创建或更新ID为4231的帖子。对同一URI进行多次PUT的副作用和一次PUT是相同的；因此，PUT方法具有幂等性。
 
-## 12 RESTful架构(SOAP,RPC)
+## RESTful架构(SOAP,RPC)
 
 推荐: <http://www.ruanyifeng.com/blog/2011/09/restful.html>
 
-## 13 SOAP
+## SOAP
 
 SOAP（原为Simple Object Access Protocol的首字母缩写，即简单对象访问协议）是交换数据的一种协议规范，使用在计算机网络Web服务（web service）中，交换带结构信息。SOAP为了简化网页服务器（Web Server）从XML数据库中提取数据时，节省去格式化页面时间，以及不同应用程序之间按照HTTP通信协议，遵从XML格式执行资料互换，使其抽象于语言实现、平台和硬件。
 
-## 14 RPC
+## RPC
 
 RPC（Remote Procedure Call Protocol）——远程过程调用协议，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。
 
@@ -1059,7 +1058,7 @@ RPC（Remote Procedure Call Protocol）——远程过程调用协议，它是�
 
 进化的顺序: RPC -> SOAP -> RESTful
 
-## 15 CGI和WSGI
+## CGI和WSGI
 
 CGI是通用网关接口，是连接web服务器和应用程序的接口，用户通过CGI来获取动态数据或文件等。
 CGI程序是一个独立的程序，它可以用几乎所有语言来写，包括perl，c，lua，python等等。
@@ -1068,30 +1067,28 @@ WSGI, Web Server Gateway Interface，是Python应用程序或框架和Web服务�
 
 官方说明：[PEP-3333](https://www.python.org/dev/peps/pep-3333/)
 
-## 16 中间人攻击
-
-在GFW里屡见不鲜的,呵呵.
+## 中间人攻击
 
 中间人攻击（Man-in-the-middle attack，通常缩写为MITM）是指攻击者与通讯的两端分别创建独立的联系，并交换其所收到的数据，使通讯的两端认为他们正在通过一个私密的连接与对方直接对话，但事实上整个会话都被攻击者完全控制。
 
-## 17 c10k问题
+## c10k问题
 
 所谓c10k问题，指的是服务器同时支持成千上万个客户端的问题，也就是concurrent 10 000 connection（这也是c10k这个名字的由来）。
 推荐: <https://my.oschina.net/xianggao/blog/664275>
 
-## 18 socket
+## socket
 
 推荐: <http://www.360doc.com/content/11/0609/15/5482098_122692444.shtml>
 
 Socket=Ip address+ TCP/UDP + port
 
-## 19 浏览器缓存
+## 浏览器缓存
 
 推荐: <http://www.cnblogs.com/skynet/archive/2012/11/28/2792503.html>
 
 304 Not Modified
 
-## 20 HTTP1.0和HTTP1.1
+## HTTP1.0和HTTP1.1
 
 推荐: <http://blog.csdn.net/elifefly/article/details/3964766>
 
@@ -1148,7 +1145,7 @@ PATCH方法出现的较晚，它在2010年的RFC 5789标准中被定义。PATCH�
 但PATCH一般用于资源的部分更新，而PUT一般用于资源的整体更新。
 当资源不存在时，PATCH会创建一个新的资源，而PUT只会对已在资源进行更新。
 
-## 21 Ajax
+## Ajax
 
 AJAX,Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）, 是与在不重新加载整个页面的情况下，与服务器交换数据并更新部分网页的技术。
 
