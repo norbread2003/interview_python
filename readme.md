@@ -857,21 +857,21 @@ AJAX,Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）, 是与�
 
 ## Linux 常用命令
 
-pwd：显示当前完整的绝对路径。
-cd：cd .. 向上一层； cd 跳转到home目录；cd- 进入先前目录。
-ll：显示详细的文件和目录信息，包括权限、大小和owner。
-cat：list the contents of a file on the standard output (sdout)。
-cp/mv：从当前路径复制/移动文件至另一文件夹，-r迭代的对目录进行操作。
-mkdir：创建文件夹，-p迭代创建文件夹, ex：mkdir -p Music/2020/Newfile。
-rm： 删除文件，-rf强制迭代删除文件夹下所有内容。
-touch：创建空白文件。
-locate：通过内置索引数据库快速查找文件，-i不区分大小写。
-find：在给定目录或从根目录迭代查找文件。
-df/du：查看系统磁盘空间使用情况/文件或目录空间占用情况，-m/h以M/合适的单位显示文件大小。
-chmod：更改指定文件/目录的权限，ex：chmod tmp 777。
-chown：转让文件/目录的所有权给指定的用户，ex：chown root:root tmp。
-kill：-9终止指定PID的进程，与ps -ef | grep python通过进程名连用查询PID。
-wget：下载文件。
-top：打开任务管理器。
-history：查看历史记录。
-hostname：查看当前主机名，-i查看IP地址。
+1. pwd：显示当前完整的绝对路径。
+2. cd：cd .. 向上一层； cd 跳转到home目录；cd- 进入先前目录。
+3. ll：显示详细的文件和目录信息，包括权限、大小和owner。
+4. cat：list the contents of a file on the standard output (sdout)。
+5. cp/mv：从当前路径复制/移动文件至另一文件夹，-r迭代的对目录进行操作。
+6. mkdir：创建文件夹，-p迭代创建文件夹, ex：mkdir -p Music/2020/Newfile。
+7. rm： 删除文件，-rf强制迭代删除文件夹下所有内容。
+8. touch：创建空白文件。
+9. locate：通过内置索引数据库快速查找文件，-i不区分大小写。
+10. find：在给定目录或从根目录迭代查找文件。
+11. df/du：查看系统磁盘空间使用情况/文件或目录空间占用情况，-m/h以M/合适的单位显示文件大小。
+12. chmod：更改指定文件/目录的权限，ex：chmod tmp 777。
+13. chown：转让文件/目录的所有权给指定的用户，ex：chown root:root tmp。
+14. kill：-9终止指定PID的进程，与ps -ef | grep python通过进程名连用查询PID。
+15. wget：下载文件。
+16. top：打开任务管理器。
+17. history：查看历史记录。
+18. hostname：查看当前主机名，-i查看IP地址。
